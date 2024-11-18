@@ -6,7 +6,7 @@ function Home(){
         router("/login")
     }
     function redirectToRegister(){
-        router("register")
+        router("/register")
     }
     function redirectToUseState(){
         router("/usestate")
