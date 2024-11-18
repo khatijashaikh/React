@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function UseState(){
-    const [counter, setCounter]=useState(1);
+    const [counter, setCounter]=useState(1);    //counter is only to access and setCounter is to update state
     console.log(counter,"counter");
     function increment(){
         setCounter(counter + 1);

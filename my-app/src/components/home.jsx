@@ -11,6 +11,9 @@ function Home(){
     function redirectToUseState(){
         router("/usestate")
     }
+    function redirectToUseState2(){
+        router("/usestatetwo")
+    }
     return (
         <div>
             <h1>Home</h1>
@@ -18,6 +21,7 @@ function Home(){
             
             <button onClick={redirectToRegister}>Go to Register Page</button>
             
+            <button onClick={redirectToUseState2}>Go to Usestate2 Page</button>
             <button onClick={redirectToUseState}>Go to Usestate Page</button>
         </div>
     );
