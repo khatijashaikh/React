@@ -1,12 +1,30 @@
 import { useState } from "react";
 
 function Register(){
-    const [name, setName]=useState("Awdiz")
-    function handleSubmit(){}
+    const [userdata, setUserData]=useState({username:'', useremail:'', userpassword: '', userconfirmpassword:''})
+   console.log(userdata,"userdata")
+    async function handleSubmit(event){
+        event.preventDefault();
+        try{
+            // const response = await axios.post("/api/register",{userdata})
+            //backend API call
+            const response={data:{success:true, message: "Registration Completed"}}
+            if(response.data.success){
+                alert(response.data.message)
+            }
+            else{
+                alert(response.data.message)
+            }
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
     // console.log(name, "name")
     function handleChange(event){
 console.log(event.target.value, event.target.name);
-setName(event.target.value)
+setUserData({...userdata,[event.target.name]: event.target.value})
+
     }
 return (
     <div>
@@ -16,10 +34,17 @@ return (
             <br/>
 <input name="username" onChange={handleChange} type="text" />
 <br />
-<input type="submit" value="Click to register"/><br />
 <label>Email:</label>
             <br/>
 <input name="useremail" onChange={handleChange} type="text" />
+<br />
+<label>Password:</label>
+            <br/>
+<input name="userpassword" onChange={handleChange} type="text" />
+<br/>
+<label>Confirm Password:</label>
+            <br/>
+<input name="userconfirmpassword" onChange={handleChange} type="text" />
 <br />
 <input type="submit" value="Click to register"/>
         </form>

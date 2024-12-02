@@ -1,0 +1,2 @@
+1. create separate file for feature
+2. create a contex instance and higher order component
