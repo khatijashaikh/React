@@ -5,6 +5,9 @@ function Register(){
    console.log(userdata,"userdata")
     async function handleSubmit(event){
         event.preventDefault();
+        if(!userdata.username && !userdata.useremail && !userdata.userpassword && !userdata.userconfirmpassword){
+            return alert("Please fill all the required fields.")
+        }
         try{
             // const response = await axios.post("/api/register",{userdata})
             //backend API call
